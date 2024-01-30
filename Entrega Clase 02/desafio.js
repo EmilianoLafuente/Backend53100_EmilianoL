@@ -9,7 +9,7 @@ function addProducts (title, description, price, thumbnail, code, stock) {
 
     if (!title || !description || !price || !thumbnail || !code || !stock) {
         console.log('All fields are required' + " " + title,description,code)
-
+        return
       }
 
     if(products.find(product => product.code === code)){
