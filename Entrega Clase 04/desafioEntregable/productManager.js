@@ -85,14 +85,14 @@ class productManager {
     }
 
     updateProduct = async(id, campo) => {
-        let productIndex  = this.products.findIndex(product => product.id === id);
+        let productIndex  = await this.products.findIndex(product => product.id === id);
 
         if(productIndex === -1) {
             console.log("Product dont exist");
             return
         }else{
-            this.products[productIndex] = { ...this.products[productIndex], ...campo }; //actualiza producto segun posicion 
-            this.saveFile()
+            this.products[productIndex] = await { ...this.products[productIndex], ...campo }; //actualiza producto segun posicion 
+            await this.saveFile()
             
             return console.log(`Producto ${id} modificado`)
         }
