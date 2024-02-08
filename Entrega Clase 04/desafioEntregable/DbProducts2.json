@@ -1,29 +1,20 @@
 [
 	{
-		"title": "PC Intel",
-		"description": "PC Intel",
+		"title": "PC Apple",
+		"description": "PC Apple",
 		"price": 599,
-		"thumbnail": "PcIntel.img",
-		"code": 6,
-		"stock": 5,
-		"id": 1
-	},
-	{
-		"title": "PC Intel 2",
-		"description": "PC Intel 2 ",
-		"price": 699,
-		"thumbnail": "PcIntel.img",
-		"code": 7,
-		"stock": 5,
-		"id": 2
-	},
-	{
-		"title": "PC Ryzen",
-		"description": "PC Ryzen",
-		"price": 699,
-		"thumbnail": "PcIntel.img",
-		"code": 8,
+		"thumbnail": "PCApple.img",
+		"code": 3,
 		"stock": 5,
 		"id": 3
+	},
+	{
+		"title": "PC Lenovo",
+		"description": "PC Lenovo",
+		"price": 599,
+		"thumbnail": "PCLenovo.img",
+		"code": 4,
+		"stock": 5,
+		"id": 4
 	}
 ]

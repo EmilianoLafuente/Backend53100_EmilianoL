@@ -72,17 +72,16 @@ class productManager {
       }
 
     deleteProduct = async(id) => {
-        let product = this.products.find(product => product.id === id) 
-
-        if ( product !== undefined) {
-            this.products = this.products.filter(product => product.id !== id)
-            this.saveFile(this.products)
+        let product = await this.products.find(product => product.id === id) 
+  
+        if (product) {
+            this.products = await this.products.filter(product => product.id !== id)
+            
+            await this.saveFile()
             console.log(`Producto ${id} eliminado`)
             return 
         }else{
             console.log(`Producto ${id} no encontrado`)}
-
-            return
     }
 
     updateProduct = async(id, campo) => {
@@ -104,7 +103,3 @@ class productManager {
 //Testing
 const productsManager = new productManager("./DbProducts2.json")
 console.log("🚀 ~ products:", await productsManager.getProducts())
-
-
-
-
