@@ -1,0 +1,16 @@
+[
+	{
+		"nombre": "Emiliano",
+		"apellido": "Lafuente",
+		"nombre_usuarios": "elafuente",
+		"password": "4a8ee05d49fd6f015ab686ad1b514d9262c0b6e1da307085ce3fe66a71f9afba",
+		"salt": "JxFsCrF6uTPCUGEpCNLIlfffpjim22lWq7HZ4AhdNena0lUg4c3rvkYVHza3JooKS2tn5isR6RKS4/EHlGqYa8snQLvNCFy2rwM5mfrZ1U1bHAR9YV+I2Gb1HZRTgltzr3X0cpFYgI2XxxYNTu8fxY4zuKKxBkJb6MLEsvdpAnk="
+	},
+	{
+		"nombre": "Emiliano 2",
+		"apellido": "Lafuente 2",
+		"nombre_usuarios": "elafuente 2",
+		"password": "2b32f964063dab27a98f76a6518cee5c5dd683990d4673c335d13fc22c3caaa7",
+		"salt": "wN+vjEXUlf68iSm7sbeY83usX6QCLE9Dzp+og93yAygCixo5Ox6Od8GZx2szjH0+1A8vka4lgzy9Xrjvvkn4gBHw8RdFDiyvbrP521rE450sen9UdESi8rKeW+xgUyru175/ySwWQPAwv/NBaDv91hLbwBxtapj++Mpqvpw8ga8="
+	}
+]
