@@ -18,7 +18,7 @@ import crypto from  'crypto'
 
 const path = "./Usuarios.json"
 
-class UserManager {
+export default class UserManager {
 
     constructor(path){
         this.path = path
@@ -60,27 +60,23 @@ class UserManager {
 
     validateUsers = async (userName, password) => {
         const users = await this.getUsers()
+        
+        const userIndex = users.findIndex(users => users.nombre_usuarios === userName)
+  
+        if(userIndex == -1){
+            console.log("User not found");
+        }
 
+        const user = users[userIndex]
+        const newHash = crypto.createHmac('sha256', user.salt).update(password).digest('hex')
 
+        if (newHash === user.password) {
+            console.log("Inicio satisfactorio")
+            
+        }else{
+            console.log("Error al iniciar sesion")
+        }
     }
 }
-
-
-//All products
-let manager = new UserManager("./Usuarios.json")
-
-let user = {
-    nombre : "Emiliano 2", 
-    apellido : "Lafuente 2",
-    nombre_usuarios : "elafuente 2",
-    password: '1234'
-}
-
-//All users
-console.log("🚀 ~ users:", await manager.getUsers())
-
-//Add user
-console.log("🚀 ~ products:", await manager.createUsers(user))
-
 
 

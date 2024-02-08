@@ -12,5 +12,12 @@
 		"nombre_usuarios": "elafuente 2",
 		"password": "2b32f964063dab27a98f76a6518cee5c5dd683990d4673c335d13fc22c3caaa7",
 		"salt": "wN+vjEXUlf68iSm7sbeY83usX6QCLE9Dzp+og93yAygCixo5Ox6Od8GZx2szjH0+1A8vka4lgzy9Xrjvvkn4gBHw8RdFDiyvbrP521rE450sen9UdESi8rKeW+xgUyru175/ySwWQPAwv/NBaDv91hLbwBxtapj++Mpqvpw8ga8="
+	},
+	{
+		"nombre": "Emiliano 3",
+		"apellido": "Lafuente 3",
+		"nombre_usuarios": "elafuente 3",
+		"password": "8c8c875f1fd75a5dd3079319d655d316fbc0496eea56d0c3cf4d18d4a9760087",
+		"salt": "oL4kWOLJMtqqKzS3DeXwMsKAU8w2y6r7ReoXh9gqvN/eit6yysPnohGoLdEtiLwCWSw17hfZLiE+G6k+dK2qOsBfFhZqv94w/pE/PcMy2xONcWnZslsjSvqL4q2fWzBqr4X1AlVxm+oUunFLehwBGAhq8iPq0ahKuH6h7rwxRa8="
 	}
 ]
