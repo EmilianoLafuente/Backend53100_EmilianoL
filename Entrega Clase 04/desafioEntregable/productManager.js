@@ -1,12 +1,28 @@
 import fs from 'fs'
-const PATH = "./DbProducts.json"
 
 class productManager {
 
-    getProducts = async() => {
-        const data = await fs.promises.readFile(PATH, 'utf-8')
+    constructor(path){
+        this.path = path
 
-        return JSON.parse(data)
+        if (fs.existsSync(this.path)) {
+            const data = fs.readFileSync(this.path, 'utf-8')
+
+            this.products =  JSON.parse(data)
+        }else{
+            this.products = []
+            fs.writeFileSync(this.path, JSON.stringify(this.products), 'utf-8')
+        }
+    }
+
+    saveFile = async() => {
+        let data = JSON.stringify(this.products, null, '\t')
+        await fs.promises.writeFile(this.path, data, 'utf-8')
+        return
+    }
+
+    getProducts = async() => {
+        return this.products
     }
 
     addProducts = async(product) => {
@@ -27,13 +43,18 @@ class productManager {
 
         if(products.length === 0){
             product.id  = 1
+            products.push(product)
+
+            this.saveFile()
+            console.log(`Producto ${product.id} agregado`);
+            return product
         }else{
             product.id  = products[products.length-1].id + 1
         
             products.push(product)
 
-            await fs.promises.writeFile(PATH, JSON.stringify(products))
-
+            this.saveFile(product)
+            console.log(`Producto ${product.id} agregado`);
             return product
         }
 
@@ -41,8 +62,7 @@ class productManager {
 
 
     getProductById = async(id) => {
-        const products = JSON.parse(await fs.promises.readFile(PATH, 'utf-8'))
-        let product = products.find(product => product.id === id)
+        let product = this.products.find(product => product.id === id)
  
         if(product === undefined) {
             console.log("Product dont exist");
@@ -52,38 +72,39 @@ class productManager {
       }
 
     deleteProduct = async(id) => {
-        const products = JSON.parse(await fs.promises.readFile(PATH, 'utf-8'))
+        let product = this.products.find(product => product.id === id) 
 
-        if (products.find(product => product.id === id) != -1) {
-            let productsLessId = products.filter(product => product.id !== id)
-                        
-            await fs.promises.writeFile(PATH, JSON.stringify(productsLessId))
+        if ( product !== undefined) {
+            this.products = this.products.filter(product => product.id !== id)
+            this.saveFile(this.products)
             console.log(`Producto ${id} eliminado`)
+            return 
         }else{
-            console.log(`Producto ${id} ne encontrado`)}
+            console.log(`Producto ${id} no encontrado`)}
 
-        return
+            return
     }
 
     updateProduct = async(id, campo) => {
+        let productIndex  = this.products.findIndex(product => product.id === id);
 
-        const products = JSON.parse(await fs.promises.readFile(PATH, 'utf-8'))
-        let product = products.find(product => product.id === id);
-
-        if(product === undefined) {
+        if(productIndex === -1) {
             console.log("Product dont exist");
+            return
         }else{
-
-            let newProduct = {...product, ...campo}
-
-            products.push(newProduct)
-    
-            await fs.promises.writeFile(PATH, JSON.stringify(products))
-    
-            return newProduct
+            this.products[productIndex] = { ...this.products[productIndex], ...campo }; //actualiza producto segun posicion 
+            this.saveFile()
+            
+            return console.log(`Producto ${id} modificado`)
         }
     }
 }
+
+
+//Testing
+const productsManager = new productManager("./DbProducts2.json")
+console.log("🚀 ~ products:", await productsManager.getProducts())
+
 
 
 
