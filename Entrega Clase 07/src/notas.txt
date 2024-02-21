@@ -1,0 +1,52 @@
+Express avanzado
+
+Recuerda que tú eres el desarrollador del servidor, entonces es tu responsabilidad 
+reconocer cuando colocar cada código de status. Si no configuramos nuestro servidor
+para devolver múltiple status, entonces será mucho más difícil rastrear los problemas
+
+
+HTTP response status codes
+Informational responses (100 – 199)
+Successful responses (200 – 299)
+Redirection messages (300 – 399)
+Client error responses (400 – 499)
+Server error responses (500 – 599)
+
+API  
+Es un conjunto de definiciones y reglas que permiten que dos equipos puedan
+integrarse para trabajar juntos. La mejor analogía que hay para comprender ésto es
+que una API funge como un "contrato" entre el front y el back.
+
+La API permite entonces que se respondan preguntas como:
+¿A qué endpoint debo apuntar para la tarea que necesito?
+¿Qué método debo utilizar para ese recurso?
+¿Qué información debo enviar para realizar correctamente mi petición?
+
+API REST
+Ya tenemos las reglas para comunicarse, ¿Pero qué tal la estructura del mensaje?
+Cuando hacemos una petición o cuando recibimos una respuesta, ésta debe tener un
+formato. REST (REpresentational State Transfer) permite definir la estructura que
+deben tener los datos para poder transferirse. Los dos formatos mas utilizados 
+son XML y JSON.
+
+Etonces un API REST es..
+Un modelo completo para tener perfectamente estipulados los protocolos, las reglas, e incluso la
+estructura de la información, con el fin de poder hacer un sistema de comunicación completo entre las
+computadoras.
+
+Interfaz uniforme
+En un sistema REST, cada acción (más correctamente, cada recurso) debe contar con una URI (Uniform Resource
+Identifier), un identificador único.
+Ésta nos facilita el acceso a la información, tanto para consultarla, como para modificarla o eliminarla, pero
+también para compartir su ubicación exacta a terceros.
+
+
+Métodos de petición
+Un método es una definición que forma parte del protocolo HTTP, el cual nos sirve para canalizar el tipo de petición que
+estoy realizando sobre un cierto endpoint. De esta manera, el cliente puede llamar al mismo endpoint, pero con diferentes
+métodos, indicando qué operación quiere realizar con dicho recurso. Los principales métodos son:
+
+GET: Obtener un recurso
+POST: Crear o añadir un recurso
+PUT: Modificar un recurso
+DELETE: Eliminar un recurso
