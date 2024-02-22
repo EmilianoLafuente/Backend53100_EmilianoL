@@ -1,0 +1,100 @@
+[
+	{
+		"title": "PC Apple",
+		"description": "PC Apple",
+		"price": 599,
+		"thumbnail": "PCApple.img",
+		"code": 3,
+		"stock": 5,
+		"id": 3
+	},
+	{
+		"title": "PC Lenovo",
+		"description": "PC Lenovo",
+		"price": 599,
+		"thumbnail": "PCLenovo.img",
+		"code": 4,
+		"stock": 5,
+		"id": 4
+	},
+	{
+		"title": "PC Intel",
+		"description": "PC Intel",
+		"price": 459,
+		"thumbnail": "PCIntel.img",
+		"code": 5,
+		"stock": 5,
+		"id": 5
+	},
+	{
+		"title": "PC HP",
+		"description": "PC HP",
+		"price": 399,
+		"thumbnail": "PCHP.img",
+		"code": 6,
+		"stock": 5,
+		"id": 6
+	},
+	{
+		"title": "PC Fujitsu",
+		"description": "PC Fujitsu",
+		"price": 299,
+		"thumbnail": "PCFujitsu.img",
+		"code": 7,
+		"stock": 5,
+		"id": 7
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 8,
+		"stock": 5,
+		"id": 8
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 9,
+		"stock": 5,
+		"id": 9
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 10,
+		"stock": 5,
+		"id": 10
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 12,
+		"stock": 5,
+		"id": 11
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"code": 13,
+		"stock": 5,
+		"id": 12
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 14,
+		"stock": 5,
+		"id": 13
+	}
+]

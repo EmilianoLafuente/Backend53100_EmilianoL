@@ -7,22 +7,22 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 
-const petsRouter = Router()
+const cartsRouter = Router()
 
 let pets = []
 
-petsRouter.get('/', (req, res) => {
+cartsRouter.get('/', (req, res) => {
     res.json({pets})
 
 })
 
-petsRouter.get('/views', (req, res) => {
+cartsRouter.get('/views', (req, res) => {
     res.sendFile(`${__dirname}/public/views/index.html`)
 
 })
 
 
-petsRouter.post('/', (req, res) => {
+cartsRouter.post('/', (req, res) => {
     const pet = req.body
     pets.push(pet)
     
@@ -30,4 +30,4 @@ petsRouter.post('/', (req, res) => {
 
 })
 
-export default petsRouter
+export default cartsRouter
