@@ -26,31 +26,22 @@ export default class productManager {
         return products
     }
 
-    addProducts = async (title, description, price, thumbnails, code, stock, status = true, category) => {
-
-        const product = {
-            title ,
-            description ,
-            price ,
-            thumbnails: thumbnails || [],
-            code ,
-            stock ,
-            status ,
-            category 
-        };
-        //aca tengo errores......
+    addProducts = async (product) => {
+        console.log("entro a add product");
         product.id = 0
         const products = await this.getProducts()
-        
-        if (!product.title || !product.description || !product.price || !product.thumbnails || !product.code || !product.stock || !product.status || !product.category) {
-            console.log('All fields are required' + " " + product.title + product.description + product.code)
-            console.log("entra en primer if");
-            return
-          }
+        product.status = true
+        product.thumbnails = []
           
+        if (!product.title || !product.description || !product.code || !product.price || !product.status || !product.stock || !product.category) {
+            console.log("Fields title, description, code, price, status, stock, and category are required.")
+            return {error: "Fields title, description, code, price, status, stock, and category are required."} 
+        }
 
         if (products.find(productFind => productFind.code === product.code)) {
+            console.log("entra en primer find");
             return {error:"Product exist" + " " + product.title + " " + product.description + " " + product.code} 
+
         }
 
         if (products.length === 0) {

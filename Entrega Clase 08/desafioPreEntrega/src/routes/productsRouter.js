@@ -58,9 +58,11 @@ productsRouter.post('/', (req, res) => {
 
     try {
         productsManager.addProducts(product).then((product) => {
+            console.log(product);
             res.json(product);
-            //console.log(product);
+
         }).catch((error) => {
+            console.log("asd");
             res.status(500).json({ error: error.message });
  
         });
