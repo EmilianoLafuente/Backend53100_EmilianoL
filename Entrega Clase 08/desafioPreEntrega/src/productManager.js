@@ -93,13 +93,21 @@ export default class productManager {
         let productIndex = await this.products.findIndex(product => product.id === id);
 
         if (productIndex === -1) {
-            console.log("Product dont exist");
-            return
-        } else {
-            this.products[productIndex] = await { ...this.products[productIndex], ...campo }; //actualiza producto segun posicion 
-            await this.saveFile()
+            return `Product ${id} dont exist`
+        }
+        if (campo.id = id) { ///revisar aca!
+            console.log(campo.id );
+            console.log(id);
+            console.log("You cannot modify product IDs, ID:${id}");
+            //return `You cannot modify product IDs, ID:${id}`
+        }else {
 
-            return console.log(`Producto ${id} modificado`)
+
+            const updatedProduct = await { ...this.products[productIndex], ...campo, id: this.products[productIndex].id } //crea una copia del producto manteniendo el id
+            this.products[productIndex] = updatedProduct
+            await this.saveFile()
+            return `Product ${id} modified`
+
         }
     }
 }

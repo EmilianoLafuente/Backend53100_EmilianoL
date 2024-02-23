@@ -207,15 +207,15 @@
 		"thumbnails": []
 	},
 	{
-		"title": "PC Fujitsu 2",
-		"description": "PC Fujitsu 2",
+		"title": "PC Fujitsu 23",
+		"description": "PC Fujitsu 23",
 		"code": 29,
 		"price": 399,
 		"status": true,
 		"stock": 5,
 		"category": "PC",
-		"thumbnail": "PCFujitsu2.img",
-		"id": 23,
+		"thumbnail": "PCFujitsu23.img",
+		"id": 24,
 		"thumbnails": []
 	}
 ]

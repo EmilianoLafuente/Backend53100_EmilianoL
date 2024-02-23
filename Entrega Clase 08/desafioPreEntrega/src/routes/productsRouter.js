@@ -62,7 +62,26 @@ productsRouter.post('/', (req, res) => {
             res.json(product);
 
         }).catch((error) => {
-            console.log("asd");
+            res.status(500).json({ error: error.message });
+ 
+        });
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ error: 'Error processing request' });
+    }
+});
+
+productsRouter.put('/:pid', (req, res) => {
+    const id = parseInt(req.params.pid)
+    const fieldUpdate = req.body
+
+    try {
+        productsManager.updateProduct(id, fieldUpdate).then((productUpdate) => {
+            console.log(productUpdate);
+            res.json(productUpdate);
+
+        }).catch((error) => {
             res.status(500).json({ error: error.message });
  
         });
