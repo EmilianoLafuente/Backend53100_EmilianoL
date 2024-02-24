@@ -21,29 +21,36 @@ export default class productManager {
         return
     }
 
+    createId = async () => {
+        let products = await this.products
+        console.log(products);
+        if (products.length > 0) {
+            const nuevoId = products[products.length - 1].id + 1
+            return nuevoId
+        }else{
+            return 1
+        }
+    }
+    
     getProducts = async () => {
         let products = await this.products
         return products
     }
 
     addProducts = async (product) => {
-        console.log("entro a add product");
         product.id = 0
         const products = await this.getProducts()
         product.status = true
-        product.thumbnails = []
-          
+
         if (!product.title || !product.description || !product.code || !product.price || !product.status || !product.stock || !product.category) {
-            console.log("Fields title, description, code, price, status, stock, and category are required.")
-            return {error: "Fields title, description, code, price, status, stock, and category are required."} 
+            return { error: "Fields title, description, code, price, status, stock, and category are required." }
         }
-
+        if (typeof product.price !== 'number' || typeof product.stock !== 'number') {
+            return { error: "Price and stock must be numbers." }
+        }
         if (products.find(productFind => productFind.code === product.code)) {
-            console.log("entra en primer find");
-            return {error:"Product exist" + " " + product.title + " " + product.description + " " + product.code} 
-
+            return { error: "Product exist" + " " + product.title + " " + product.description + " " + product.code }
         }
-
         if (products.length === 0) {
             product.id = 1
             products.push(product)
@@ -52,14 +59,12 @@ export default class productManager {
             console.log(`Product ${product.id} added`);
             return product
         } else {
-            product.id = products[products.length - 1].id + 1
+            product.id = await this.createId()
 
             products.push(product)
-            console.log("🚀 ~ productManager ~ addProducts= ~ product:", product)
-            
-            this.saveFile(product)
-            console.log(`Producto ${product.id} agregado`);
-            return product
+            this.saveFile()
+
+            return `Product ${product.id} added`
         }
 
     }
@@ -82,31 +87,28 @@ export default class productManager {
             this.products = await this.products.filter(product => product.id !== id)
 
             await this.saveFile()
-            console.log(`Producto ${id} eliminado`)
-            return
+            return `Product ${id} deleted`
         } else {
-            console.log(`Producto ${id} no encontrado`)
+            return `Product ${id} not found`
         }
     }
 
     updateProduct = async (id, campo) => {
-        let productIndex = await this.products.findIndex(product => product.id === id);
+        let productIndex = await this.products.findIndex(product => product.id === id)
 
         if (productIndex === -1) {
             return `Product ${id} dont exist`
         }
-        if (campo.id = id) { ///revisar aca!
-            console.log(campo.id );
-            console.log(id);
-            console.log("You cannot modify product IDs, ID:${id}");
-            //return `You cannot modify product IDs, ID:${id}`
-        }else {
 
-
+        if (!campo.hasOwnProperty('id') || campo.id === id) {  //hasOwnProperty comprueba si tiene la propiedad especifica
+            
             const updatedProduct = await { ...this.products[productIndex], ...campo, id: this.products[productIndex].id } //crea una copia del producto manteniendo el id
             this.products[productIndex] = updatedProduct
             await this.saveFile()
             return `Product ${id} modified`
+            
+        }else {
+            return `You cannot modify product IDs, ID:${id}`
 
         }
     }

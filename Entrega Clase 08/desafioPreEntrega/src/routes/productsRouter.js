@@ -11,8 +11,6 @@ const path = join(__dirname, '..', 'database', 'DbProducts.json') //access to DB
 const productsRouter = Router()
 const productsManager = new productManager(path)
 
-let users = []
-
 productsRouter.get("/", (req, res) => {
     try {
         const limit = parseInt(req.query.limit, 10);
@@ -55,10 +53,9 @@ productsRouter.get("/:pid", (req, res) => {
 
 productsRouter.post('/', (req, res) => {
     const product = req.body
-
+    
     try {
         productsManager.addProducts(product).then((product) => {
-            console.log(product);
             res.json(product);
 
         }).catch((error) => {
@@ -80,6 +77,25 @@ productsRouter.put('/:pid', (req, res) => {
         productsManager.updateProduct(id, fieldUpdate).then((productUpdate) => {
             console.log(productUpdate);
             res.json(productUpdate);
+
+        }).catch((error) => {
+            res.status(500).json({ error: error.message });
+ 
+        });
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ error: 'Error processing request' });
+    }
+});
+
+productsRouter.delete('/:pid', (req, res) => {
+    try {
+        const id = parseInt(req.params.pid)
+
+        productsManager.deleteProduct(id).then((productDel) => {
+            console.log(productDel);
+            res.json(productDel);
 
         }).catch((error) => {
             res.status(500).json({ error: error.message });

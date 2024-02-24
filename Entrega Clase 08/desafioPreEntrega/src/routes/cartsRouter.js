@@ -9,7 +9,7 @@ const __dirname = dirname(__filename)
 
 const cartsRouter = Router()
 
-let pets = []
+let cart = []
 
 cartsRouter.get('/', (req, res) => {
     res.json({pets})
@@ -23,8 +23,8 @@ cartsRouter.get('/views', (req, res) => {
 
 
 cartsRouter.post('/', (req, res) => {
-    const pet = req.body
-    pets.push(pet)
+    const products = req.body
+    cart.push(products)
     
     res.json({status: "succes"})
 
