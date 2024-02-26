@@ -23,10 +23,10 @@ export default class productManager {
 
     createId = async () => {
         let products = await this.products
-        console.log(products);
         if (products.length > 0) {
             const nuevoId = products[products.length - 1].id + 1
             return nuevoId
+
         }else{
             return 1
         }
@@ -63,7 +63,7 @@ export default class productManager {
 
             products.push(product)
             this.saveFile()
-
+            console.log(`Product ${product.id} added`);
             return `Product ${product.id} added`
         }
 

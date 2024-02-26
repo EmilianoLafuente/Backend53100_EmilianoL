@@ -366,5 +366,82 @@
 		"category": "PC",
 		"thumbnails": "PCFujitsu12.img",
 		"id": 37
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 62,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 38
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 63,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 39
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 64,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 40
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 65,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 41
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 66,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 42
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 67,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 43
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 68,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 44
 	}
 ]
