@@ -1,6 +1,6 @@
 import Express from "express"
 import handlebars from 'express-handlebars'
-import {Server} from 'socket.io'
+import {Server, Socket} from 'socket.io'
 import __dirname from "./utils.js"
 import viewsRouter from './routes/views.router.js'
 
@@ -25,9 +25,20 @@ app.engine('handlebars', handlebars.engine())
 
 
 
-//servidorON
-const server = app.listen(port, () => {console.log(`Open server on port ${port}`);
+//servidorON 
+const server = app.listen(port, () => {console.log(`Open server on port ${port}`); //escucha los request al servidor
 });
 const io = new Server(server) //socket.io instanciado 
+
+io.on('connection', socket => { //Con conexion establecida
+
+        console.log("Connected!");
+
+        socket.on ("message", (data)=> {
+            //io.emit('log', data)
+            console.log(data);
+
+        })
+})
 
 server.on("error", (error) => console.log("Server error:", error));
