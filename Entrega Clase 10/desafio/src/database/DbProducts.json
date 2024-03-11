@@ -1,0 +1,447 @@
+[
+	{
+		"title": "PC Apple",
+		"description": "PC Apple",
+		"price": 599,
+		"thumbnail": "PCApple.img",
+		"code": 3,
+		"stock": 5,
+		"id": 3
+	},
+	{
+		"title": "PC Lenovo",
+		"description": "PC Lenovo",
+		"price": 599,
+		"thumbnail": "PCLenovo.img",
+		"code": 4,
+		"stock": 5,
+		"id": 4
+	},
+	{
+		"title": "PC Intel",
+		"description": "PC Intel",
+		"price": 459,
+		"thumbnail": "PCIntel.img",
+		"code": 5,
+		"stock": 5,
+		"id": 5
+	},
+	{
+		"title": "PC HP",
+		"description": "PC HP",
+		"price": 399,
+		"thumbnail": "PCHP.img",
+		"code": 6,
+		"stock": 5,
+		"id": 6
+	},
+	{
+		"title": "PC Fujitsu",
+		"description": "PC Fujitsu",
+		"price": 299,
+		"thumbnail": "PCFujitsu.img",
+		"code": 7,
+		"stock": 5,
+		"id": 7
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 8,
+		"stock": 5,
+		"id": 8
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 9,
+		"stock": 5,
+		"id": 9
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 10,
+		"stock": 5,
+		"id": 10
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 15,
+		"stock": 5,
+		"id": 11
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 16,
+		"stock": 5,
+		"id": 12
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"price": 399,
+		"thumbnail": "PCFujitsu2.img",
+		"code": 20,
+		"stock": 5,
+		"id": 13
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 21,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 14,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 22,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 15,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 23,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 16,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 2,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 17,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 24,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 18,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 25,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 19,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 26,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 20,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 27,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 21,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 2",
+		"description": "PC Fujitsu 2",
+		"code": 29,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu2.img",
+		"id": 22,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 23",
+		"description": "PC Fujitsu 23",
+		"code": 33,
+		"price": 380,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnail": "PCFujitsu23.img",
+		"id": 24,
+		"thumbnails": []
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 41,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": [],
+		"id": 25
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 41,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 26
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 42,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 27
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 43,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 28
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 44,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 29
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 45,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 30
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 46,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": [
+			"PCFujitsu12.img",
+			"asdasd.jpg"
+		],
+		"id": 31
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 47,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": [
+			"PCFujitsu12.img",
+			"asdasd.jpg"
+		],
+		"id": 32
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 48,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 33
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 49,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 34
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 59,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 35
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 60,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 36
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 61,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 37
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 62,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 38
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 63,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 39
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 64,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 40
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 65,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 41
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 66,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 42
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 67,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 43
+	},
+	{
+		"title": "PC Fujitsu 12",
+		"description": "PC Fujitsu 12",
+		"code": 68,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu12.img",
+		"id": 44
+	}
+]
