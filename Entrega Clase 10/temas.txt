@@ -1,0 +1,10 @@
+53100 - 20/02 - Motores de plantillas- Pantalla compartida con vista del orador
+
+
+A pesar de que websocket y HTTP son protocolos como lo mencionamos anteriormente, websocket tiene una
+característica muy importante: Su protocolo TCP establece dos endpoints de comunicación, a cada endpoint se le conoce como socket.
+
+El contar con estos dos sockets permitira establecer una comunicación bidireccional entre 
+el cliente y el servidor. La comunicación bidireccional implica:
+*Que el cliente puede obtener recursos del servidor cuando lo solicite (como en HTTP)
+*Que el servidor pueda entregar informacion al cliente sin necesidad de peticion
