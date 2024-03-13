@@ -1,17 +1,10 @@
-{{!-- <div>
-    <h1>Home</h1>
-    <input type="textbox">
-    <p id="log"></p>
-</div>
-
-<script src="/socket.io/socket.io.js"></script>
-<script src="/js/home.js"></script> --}}
-
-
 <div>
     <h1>Home</h1>
     <input id="textbox">
     {{#each logs as |obj|}}
+    {{obj.socketid}}: {{obj.message}}
+    {{/each}}
+    {{#each products as |obj|}}
     {{obj.socketid}}: {{obj.message}}
     {{/each}}
     <p id="log"></p>

@@ -1,5 +1,5 @@
 import Router from "express";
-import productManager from "../productManager.js"
+//import productManager from "./productManager.js"
 import cartManager from "../cartManager.js";
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path';
