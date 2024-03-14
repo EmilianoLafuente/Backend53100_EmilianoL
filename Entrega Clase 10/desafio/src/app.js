@@ -1,10 +1,12 @@
 import express from 'express';
 import __dirname from './utils.js';
+import { join } from 'path';
 import handlebars from 'express-handlebars'
 import { Server } from 'socket.io'
 import productsRouterView from './routes/viewsRouter.js'
 import cartsRouter from "./routes/cartsRouter.js"
 import productsRouter from "./routes/productsRouter.js"
+import productManager from "./productManager.js"
 
 const app = express();
 const port = 8080
@@ -20,26 +22,62 @@ app.engine('handlebars', handlebars.engine())
 //routes
 app.use("/api/carts", cartsRouter)
 app.use("/api/products", productsRouter)
-app.use("/realTimeProducts", productsRouterView)
+app.use("/", productsRouterView)
 
-const server = app.listen(port,()=>console.log("Listening in", port))
+const server = app.listen(port,()=>console.log("Listening in", port)) //instanciando express
+const io = new Server(server) //instanciando socket.io
 
-const io = new Server(server)//instanciando socket.io
+//Con Type: module (de debe hacer de esta manera)
+const path = join(__dirname, 'database', 'DbProducts.json') //access to DB
 
-const logs = [{ socketid: '1111', message: 'ssss' } ]
+const productsManager = new productManager(path)
+const products = await productsManager.getProducts()
 
-io.on('connection', socket =>{
-    console.log("Connected! io.on")
+// Socket.io para tiempo real
+io.on('connection', (socket) => {
+    console.log('Usuario conectado');
+    
+    // Enviamos lso productos por emit
+    socket.emit('productos', products);
+});
 
-    //io.send(JSON.stringify(products));
 
-    socket.on("message", (data)=> {
 
-    logs.push({socketid: socket.id, message: data})
+
+
+
+
+
+
+
+
+
+
+
+
+// io.on('connection', socket =>{
+//     console.log("Connected! io.on")
+
+//     //io.send(JSON.stringify(products));
+
+//     // socket.on("message", (data)=> {
+
+//     // logs.push({socketid: socket.id, message: data})
         
-        io.emit('log',{logs})
-        console.log("🚀 ~ logs:", logs)
+//     //     io.emit('log',{logs})
+//     //     console.log("🚀 ~ logs:", logs)
         
-    })
+//     // })
 
-})
+//     socket.on("message", (data)=> {
+//             console.log("dentro del socket.on");
+//             productsData.push({tittle: socket.tittle, message: data})
+//             console.log("🚀 ~ socket.on ~ productsData:", productsData)
+            
+            
+//             io.emit('productsData',{productsData})
+//             //console.log("🚀 ~ logs:", logs)
+            
+//         })
+
+// })

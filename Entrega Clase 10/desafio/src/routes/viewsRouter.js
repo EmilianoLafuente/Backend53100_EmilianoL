@@ -1,26 +1,24 @@
 import { Router } from "express";
-import productManager from "../productManager.js"
-import { join } from 'path';
 import __dirname from "../utils.js";
+import { join } from 'path';
+import productManager from "../productManager.js"
+
+const productsRouterView = Router()
 
 //Con Type: module (de debe hacer de esta manera)
 const path = join(__dirname, 'database', 'DbProducts.json') //access to DB
 
-const productsRouterView = Router()
 const productsManager = new productManager(path)
-
 const products = await productsManager.getProducts()
 
-
-
-
-
-
-productsRouterView.get('/',(req,res)=>{
-    const logs = JSON.stringify(products) // quede aca
-
-    res.render('realTimeProducts', {logs});
+productsRouterView.get('/realTimeProducts',(req,res)=>{
+    // Renderiza la plantilla Handlebars
+    res.render('realTimeProducts', { title: 'Real Time Products' });
 })
 
+productsRouterView.get('/',(req,res)=>{
+    // Renderiza la plantilla Handlebars con los datos de productos  
+    res.render('home', {products});
+})
 
 export default productsRouterView;

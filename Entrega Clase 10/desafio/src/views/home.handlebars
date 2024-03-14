@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>Lista de Productos</title>
 </head>
 <body>
-    <h1>{{ title }}</h1>
-    <div id="productos">
+    <h1>Lista de Productos</h1>
     <ul>
         {{#each products}}
             <li>Nombre: {{this.title}} - Descripcion: {{this.description}} - Codigo: {{this.code}} -
@@ -15,8 +14,5 @@
             </li>
         {{/each}}
     </ul>
-    </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/home.js"></script>
 </body>
 </html>
