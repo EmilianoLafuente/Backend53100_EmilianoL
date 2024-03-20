@@ -1,0 +1,7 @@
+Mongoose es un ODM (Object Document Mapping), el cual nos permitirá definir
+esquemas para poder gestionar colecciones y documentos entre una aplicación 
+de nodejs y una base de datos en MongoDB
+Una vez que comprendemos que MongoDB permite gestionar documentos similar a 
+un objeto. Además, mongoose nos permitirá conectar con la base de datos gestionada
+desde Mongo Atlas, con el fin de poder mantener la gestión de la base de datos desde
+la nube.

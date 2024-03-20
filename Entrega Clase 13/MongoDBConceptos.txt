@@ -1,0 +1,46 @@
+Proyecciones:
+En ocasiones no necesitamos toda la información de un
+documento. Si tenemos un documento con 100 propiedades,
+podemos definir sólo las propiedades que queremos
+obtener.
+
+Una proyección se incluye al momento de hacer una
+búsqueda, (siempre como segundo argumento) y es el
+equivalente a decirle a la base de datos: "sólo necesito
+ésto"
+
+Así, podríamos decir db.users.find({}.{name:1}); Lo cual
+indica que, el campo "name" es el único que necesitamos
+obtener por parte del documento, ahorrándonos espacio y
+complejidad en el resultado.
+
+Sort:
+
+Sirve para poder hacer un ordenamiento de la
+información. El ordenamiento se define con 1 o -1 para
+hacer el ordenamiento ascendente o descendente
+respectivamente.
+
+La sintaxis es:
+db.collection.find().sort({val_A:1,val_B:-1})
+
+La razón por la cual podemos agregar múltiples valores
+de ordenamiento, es en caso de que dos documentos
+tengan el mismo valor, podamos ordenarlos bajo otro
+criterio
+
+Skip y Limit
+
+Skip: Omite el número de documentos indicados:
+Podemos usarlo cuando hagamos paginaciones,
+cuando necesitemos ignorar un valor que sabemos que
+es innecesario, etc.
+
+Su sintaxis es: .skip(offset)
+
+Limit: Limita el número de documentos devueltos. De
+manera que podamos hacer diferentes niveles de
+paginación (Tu página puede devolver 5 elementos por
+página, o bien 100, tú decides).
+
+Su sintaxis es: limit(num)

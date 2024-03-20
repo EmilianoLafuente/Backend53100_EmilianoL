@@ -1,0 +1,33 @@
+show dbs
+
+db.dropDatabase()
+db.dropDatabase(<primerDb>)
+
+
+db.createCollection("mascotas")
+
+Find
+Todos
+db.mascotas.find()
+Por categoria
+db.mascotas.find({especie: "Chow Chow"})
+
+
+
+inserts
+db.mascotas.insertOne({nombre:"Max",especie:"Chow Chow",edad:10})
+
+db.mascotas.insertMany([
+{nombre:"Max",especie:"Chow Chow",edad:10},
+{nombre:"Khiara",especie:"Chow Chow",edad:9},
+{nombre:"Juanita",especie:"Bulldog Frances",edad:1},
+{nombre:"Milo",especie:"Bulldog Frances",edad:1},
+{nombre:"Martina",especie:"Bulldog Frances",edad:1}
+]) 
+
+db.mascotas.count
+
+db.mascotas.countDocuments()
+db.mascotas.countDocuments({especie:"Chow Chow"})
+
+

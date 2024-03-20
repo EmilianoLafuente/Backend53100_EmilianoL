@@ -1,0 +1,75 @@
+Base de datos
+Una base de datos no es más que una recopilación organizada de datos. Dichos datos deben compartir algún contexto y son
+almacenados con poder convertirse posteriormente en información útil para utilizarse dentro de algún sistema.
+La base de datos sólo se encargará de almacenar dichos datos, el uso que les demos posteriormente ya no competen a ésta.
+
+Ventajas: (Contra un JSON)
+* Facil gestion una vez configurada
+* Mas efectividad en las consultas
+* Mayor escalabilidad
+* Acceso a los datos 
+* Almacenamiento seguro (proteccion de datos)
+* Buscar en un filesystem enorme no es eficiente
+
+
+
+Modelo relacion y no relacional 
+Una vez que entendimos que la base de datos nos sirve para mantener los datos organizados, toca entender
+cuándo utilizar un modelo relacional o un modelo no relacional.
+* Una base de datos relacional refiere a estructura, relación, dependencia y de cambio controlado.
+* Una base de datos no relacional refiere a algo menos estructurado, con relaciones y  dependencias más flexibles, y de 
+cambios sumamente rápidos.
+
+Modelo relacional
+Refiere a modelos de datos donde se requieren estructuras más firmes y estrictas sobre los datos. Además, se utilizan en datos 
+más controlados. 
+*Se basan en tablas, columnas y filas para gestionar sus datos.
+*Permiten conectar las tablas a partir de "relaciones" basadas en llaves primarias y foráneas.
+
+Sirve para datos de control como:
+Sistemas bancarios
+Sistemas de clima (no tiempo atmosférico).
+Sistemas de películas.
+
+Su lenguaje es SQL (Structured Query Language)
+Algunos sistemas SQL son:
+PostgreSQL
+Oracle
+MysQL
+MariaDB
+
+Introduciendo el modelo no relacional
+Se desarrolla un modelo donde los datos sean más flexibles, tanto en estructura, como en asociación.
+Todo esto con el fin de crear datos pensados para desempeño, no para consistencia inmediata.
+
+Son bases de datos muy útiles para organizar y gestionar información no estructurada, o cuando
+no se tiene una noción clara de los datos a almacenar.
+
+Alto grado de escalabilidad y de performance
+No utiliza SQL como lenguaje
+
+Algunos sistemas No SQL son
+MongoDB
+Redis
+DynamoDB
+
+
+¿Cuándo usar cada modelo?
+*Modelo relacional
+*Cuando el volumen de los datos no crece, o bien lo hace poco a poco
+*Cuando las necesidades del proceso pueden atenderse en un solo servidor
+*Cuando no existen picos de uso por parte de los usuarios que utilizan el sistema.
+
+**Modelo no relacional
+**Cuando el volumen de los datos crece rápidamente
+** Cuando las necesidades del proceso son tan altas y tan constantes, que se requieren multi servidores
+**Cuando los usuarios saturan el sistema y generan "picos de uso".
+
+MongoDB
+
+Base de datos no relacional orientada a documentos
+En lugar de tablas, opta por utilizar colecciones,
+Cada documento que ingresamos a una colección puede tener diferente estructura
+Puede utilizarse en modo local o en la nube
+
+
