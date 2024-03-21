@@ -11,7 +11,7 @@ const server = app.listen(PORT, ()=> console.log("Server running in", PORT))
 
 
 const connectMongoDB = async ()=>{
-    const stringConnection = 'mongodb+srv://admin:<admin>@cluster0.u9vxzcu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0' //todo pasar a .env
+    const stringConnection = 'mongodb+srv://admin:Case2441.@cluster0.ursafaf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0' //todo pasar a .env
 
 
     try {
