@@ -2,7 +2,7 @@ import { Router } from "express";
 import __dirname from "../utils.js";
 import { join } from 'path';
 // import productManager from "../productManager.js"
-import productsModel from "../models/prodcuts.js";
+import productsModel from "../dao/models/prodcuts.js";
 
 const productsRouterView = Router()
 

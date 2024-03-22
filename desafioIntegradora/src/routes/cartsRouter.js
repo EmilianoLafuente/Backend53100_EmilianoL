@@ -1,46 +1,46 @@
 import Router from "express";
-//import productManager from "./productManager.js"
-import cartManager from "../cartManager.js";
-import { fileURLToPath } from 'url'
-import { dirname, join } from 'path';
-
-//Con Type: module (de debe hacer de esta manera)
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-const path = join(__dirname, '..', 'database', 'carts.json') //access to DB
+import cartsModel from "../dao/models/carts.js";
 
 const cartsRouter = Router()
-const cartsManager = new cartManager(path)
 
-cartsRouter.get('/:cid', (req, res) => {
+
+cartsRouter.get('/', async (req, res) => { ///api/carts/
+
+    try {
+        let result = await cartsModel.find() 
+        console.log();
+        res.json({result})
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json(error.message);
+    }
+
+
+})
+
+cartsRouter.get('/:cid', async (req, res) => { ///api/carts/1
     const id = parseInt(req.params.cid)
 
     try {
-        cartsManager.getCartById(id).then((getCartById) => {
-            res.json(getCartById);
-
-        }).catch((error) => {
-            res.status(500).json({ error: error.message });
+        let result = await cartsModel.find({id}) 
  
-        });
+        res.json({result})
 
     } catch (error) {
         console.error(error.message);
-        res.status(500).json({ error: 'Error processing request' });
+        res.status(500).json(error.message);
     }
 
 
 })
 
-cartsRouter.post('/', (req, res) => {  
+cartsRouter.post('/', async (req, res) => {  ///api/carts/
     try {
-        cartsManager.addCart().then((addCart) => {
-            res.json(addCart);
+        const newCart = new cartsModel()
+        await newCart.save()
 
-        }).catch((error) => {
-            res.status(500).json({ error: error.message });
- 
-        });
+        res.status(201).json(newCart)
 
     } catch (error) {
         console.error(error.message);
@@ -48,18 +48,26 @@ cartsRouter.post('/', (req, res) => {
     }
 })
 
-cartsRouter.post('/:cid/product/:pid', (req, res) => {  
+cartsRouter.post('/:cid/product/:pid', async (req, res) => {   ///api/carts/1/product/2
     const cartId = parseInt(req.params.cid)
     const productId = parseInt(req.params.pid)
+    
+    if (!cartId) {
+        return `Cart not found`
+    }
 
     try {
-        cartsManager.addProductToCart(cartId,productId).then((addProductToCart) => {
-            res.json(addProductToCart);
+        const cart = await cartsModel.findOne({id: cartId })
+        const existingProduct = cart.products.find(item => item.product === productId);
+    
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            cart.products.push({ product: productId, quantity: 1 });
+        }
 
-        }).catch((error) => {
-            res.status(500).json({ error: error.message });
- 
-        });
+        await cartsModel.updateOne({id:cartId},{$set:cart})
+        res.status(200).json({ message: `Product ${productId} added to cart ${cartId}` });
 
     } catch (error) {
         console.error(error.message);
@@ -67,6 +75,13 @@ cartsRouter.post('/:cid/product/:pid', (req, res) => {
     }
 })
 
+cartsRouter.delete('/delete', async (req, res) => {
 
+    const result = await cartsModel.deleteMany({});
+
+    console.log(`${result.deletedCount} carts deleted.`);
+    return res.json({ message: `${result.deletedCount} carts deleted` });
+
+})
 
 export default cartsRouter

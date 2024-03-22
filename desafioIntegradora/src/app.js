@@ -6,7 +6,7 @@ import productsRouterView from './routes/viewsRouter.js'
 import cartsRouter from "./routes/cartsRouter.js"
 import productsRouter from "./routes/productsRouter.js"
 import mongoose from 'mongoose';
-import productsModel from "./models/prodcuts.js";
+import productsModel from "./dao/models/prodcuts.js";
 
 const app = express();
 const port = 8080
