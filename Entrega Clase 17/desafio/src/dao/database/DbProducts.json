@@ -1,0 +1,79 @@
+[
+	{
+		"title": "PC Fujitsu",
+		"description": "PC Fujitsu",
+		"code": 1,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCFujitsu.img",
+		"id": 1
+	},
+	{
+		"title": "PC Intel",
+		"description": "PC Intel",
+		"code": 2,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PCIntel.img",
+		"id": 2
+	},
+	{
+		"title": "PC Ryzen",
+		"description": "PC Ryzen",
+		"code": 3,
+		"price": 399,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "PC Ryzen",
+		"id": 3
+	},
+	{
+		"title": "Iphone 15",
+		"description": "Iphone 15",
+		"code": 4,
+		"price": 1099,
+		"status": true,
+		"stock": 5,
+		"category": "CEL",
+		"thumbnails": "Iphone15.png",
+		"id": 4
+	},
+	{
+		"title": "Iphone 15 Pro",
+		"description": "Iphone 15 Pro",
+		"code": 5,
+		"price": 1199,
+		"status": true,
+		"stock": 5,
+		"category": "CEL",
+		"thumbnails": "Iphone15Pro.png",
+		"id": 5
+	},
+	{
+		"title": "Iphone 15 Pro Max",
+		"description": "Iphone 15 Pro Max",
+		"code": 6,
+		"price": 1299,
+		"status": true,
+		"stock": 5,
+		"category": "CEL",
+		"thumbnails": "Iphone15ProMax.png",
+		"id": 6
+	},
+	{
+		"title": "Notebook AMD",
+		"description": "Notebook AMD",
+		"code": 7,
+		"price": 999,
+		"status": true,
+		"stock": 5,
+		"category": "PC",
+		"thumbnails": "NotebookAMD.png",
+		"id": 7
+	}
+]

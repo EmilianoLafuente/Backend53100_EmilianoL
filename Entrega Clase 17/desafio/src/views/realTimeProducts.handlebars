@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <div class="container">
+        <div class="header-container">
+            <div class="preheader">Todos nuestros productos son garantidos!!</div>
+            <header></header>
+            <div id="productos">
+                <li>
+                    <ul>
+                        {{#each products}}
+                        Nombre: {{this.title}} -
+                        Descripcion: {{this.description}} -
+                        Codigo: {{this.code}} -
+                        Precio: {{this.price}} -
+                        Stock: {{this.stock}} -
+                        Categoria: {{this.category}}
+                        {{/each}}
+                    </ul>
+
+                </li>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>
