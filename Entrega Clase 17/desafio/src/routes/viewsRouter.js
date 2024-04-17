@@ -14,7 +14,8 @@ const path = join(__dirname, 'database', 'DbProducts.json') //access to DB
 
 productsRouterView.get('/realTimeProducts', async (req,res)=>{
     let products = await productsModel.find()
-    console.log("🚀 ~ productsRouterView.get ~ products:", products)
+    
+    //console.log("🚀 ~ productsRouterView.get ~ products:", products)
     
     // Renderiza la plantilla Handlebars
     res.render('realP', {products}); //realTimeProducts
