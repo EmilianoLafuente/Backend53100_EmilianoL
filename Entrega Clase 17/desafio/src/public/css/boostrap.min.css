@@ -648,7 +648,7 @@ progress {
 }
 
 .img-fluid {
-    max-width: 100%;
+    max-width: 10%;
     height: auto
 }
 
@@ -657,8 +657,9 @@ progress {
     background-color: #fff;
     border: 1px solid var(--bs-border-color);
     border-radius: .375rem;
-    max-width: 100%;
-    height: auto
+    max-width: 50%;
+    height: auto;
+    justify-content: left;
 }
 
 .figure {
