@@ -4,6 +4,11 @@ import productsModel from "../dao/models/prodcuts.js";
 const productsRouter = Router()
 
 productsRouter.get("/", async (req, res) => {
+
+    // cartsRouter.post('/:cid/product/:pid', async (req, res) => {   ///api/carts/1/product/2
+    //     const cartId = parseInt(req.params.cid)
+    //     const productId = parseInt(req.params.pid)
+
     try {
         const limit = parseInt(req.query.limit, 10);
         let result = await productsModel.find().limit(limit) // /api/products?limit=3

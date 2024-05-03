@@ -1,5 +1,5 @@
 import express from 'express';
-import {__dirname } from './utils.js';
+import __dirname from './utils.js';
 import handlebars from 'express-handlebars'
 import { Server } from 'socket.io'
 import productsRouterView from './routes/viewsRouter.js'
@@ -9,10 +9,10 @@ import mongoose from 'mongoose';
 import productsModel from "./dao/models/prodcuts.js";
 
 const app = express();
-const port = process.env.PORT
+const port = 8080
 
 // Conexión a la base de datos MongoDB
-const stringConnection = process.env.stringConnection
+const stringConnection = 'mongodb+srv://admin:Case2441.@cluster0.ursafaf.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0'
 
 mongoose.connect(stringConnection, {}) 
   .then(() => console.log('Conexión a MongoDB establecida'))
@@ -38,9 +38,7 @@ const io = new Server(server) //instanciando socket.io
 io.on('connection', async (socket) => {
     console.log('Usuario conectado');
     let products = await productsModel.find() 
-    // let products = await productsModel.paginate({},{limit: 5}) 
-    // console.log("🚀 ~ io.on ~ products:", products)
 
-    //Enviamos los productos por emit
-    socket.emit('productosEmit', products);
+    //Enviamos lso productos por emit
+    socket.emit('productos', products);
 });

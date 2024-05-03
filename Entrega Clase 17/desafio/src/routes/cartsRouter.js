@@ -23,7 +23,7 @@ cartsRouter.get('/:cid', async (req, res) => { ///api/carts/1
     const id = parseInt(req.params.cid)
 
     try {
-        let result = await cartsModel.find({id}) 
+        let result = await cartsModel.find({id})
  
         res.json({result})
 

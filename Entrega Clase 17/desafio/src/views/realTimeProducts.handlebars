@@ -13,10 +13,11 @@
         <div class="header-container">
             <div class="preheader">Todos nuestros productos son garantidos!!</div>
             <header></header>
-            <div id="productos">
+            {{!-- <div id="productos"> --}}
+            <div>
                 <li>
                     <ul>
-                        {{#each products}}
+                        {{#each docs}}
                         Nombre: {{this.title}} -
                         Descripcion: {{this.description}} -
                         Codigo: {{this.code}} -
@@ -30,9 +31,14 @@
             </div>
         </div>
     </div>
+    
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/home.js"></script>
+    {{!-- <script src="/js/home.js"></script> --}}
+    
+    <script>
+        console.log(docs)
+    </script>
 </body>
 
 </html>

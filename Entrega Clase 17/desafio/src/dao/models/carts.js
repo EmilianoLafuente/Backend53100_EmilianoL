@@ -9,16 +9,20 @@ const schema = new Schema({
         unique: true
 
     },
-    products: {
+    products: [{
+        // type: Schema.Types.ObjectId,
+        // ref:"products", 
+        // required: true,
+
         type: [], 
         required: true,
         default: []
-    }
+    }]
 
 })
 
-
-schema.pre('save', async function(next) {
+//middleware
+schema.pre('save', async function(next) { //para agregar id
     try {
         if (this.isNew) { //Verifica si el documento es nuevo
             const latestCart = await this.constructor.findOne({}, {}, { sort: { 'id': -1 } })
@@ -33,6 +37,10 @@ schema.pre('save', async function(next) {
         next(error);
     }
 });
+
+// schema.pre("find", function (){
+//     this.populate('products.id')
+// })
 
 
 const cartsModel = mongoose.model(collection, schema)
