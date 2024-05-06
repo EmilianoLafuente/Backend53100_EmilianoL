@@ -8,17 +8,17 @@ const __dirname = dirname(__filename);
 
   // Función para obtener resultados filtrados y paginados
   async function obtenerResultadosFiltradosYPaginados(filtro, opcionesDePaginacion) {
+
     try {
-      // Realiza la agregación
-      const resultadosAgregados = await productsModel.aggregate([
-        { $match: filtro },
-        // Agrega tus etapas de agregación según sea necesario
-      ]);
-  
-      // Pagina los resultados agregados
+      const resultadosAgregados = await productsModel.aggregate(filtro);
+
       const resultadosPaginados = await productsModel.paginate(resultadosAgregados, opcionesDePaginacion);
-  
-      return resultadosPaginados;
+      //console.log("🚀 ~ obtenerResultadosFiltradosYPaginados ~ resultadosPaginados:", resultadosPaginados)
+      //let products = await productsModel.paginate({resultadosAgregados},{pageQuery, limit, lean:true}) 
+      return resultadosPaginados
+      //return resultadosPaginados;
+      //return products
+      
     } catch (error) {
       console.error("Error al obtener resultados filtrados y paginados:", error);
       throw error;

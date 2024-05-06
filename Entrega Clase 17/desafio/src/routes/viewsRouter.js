@@ -7,6 +7,8 @@ import productsModel from "../dao/models/prodcuts.js";
 
 const productsRouterView = Router()
 
+
+
 //Con Type: module (de debe hacer de esta manera)
 const path = join(__dirname, 'database', 'DbProducts.json') //access to DB
 
@@ -15,36 +17,26 @@ const path = join(__dirname, 'database', 'DbProducts.json') //access to DB
 
 productsRouterView.get('/realTimeProducts', async (req, res) => {
     let pageQuery = parseInt(req.query.page)
-    let categoryQuery = req.query.category ? parseString(req.query.category) : "PC"
+    let categoryQuery = req.query.category ? req.query.category : "PC" //quite .toString()
     let limit = req.query.limit ? parseInt(req.query.limit, 10) : 5
 
     if (!pageQuery) pageQuery = 1
 
-    //
-    // QUEDE ACA
-    //
     const pipelines = [
-        {
-            // $match:{category: "CEL"}
-            $match: { category: categoryQuery }
-        }
-
-        // ,
-        // {
-        //     $sort: { price: -1 } //menor a mayor
-        // }
+        {$match: { category: categoryQuery }},
+        {$sort: { price: -1}}
     ]
-
-    const opcionesDePaginacion = {
-        page: 1,
-        limit: limit
-    };
-
+    const opcionesDePaginacion = { 
+        page: pageQuery,
+        limit: limit,
+        lean:true
+    }
+    
     try {
-        const resultados = await obtenerResultadosFiltradosYPaginados(pipelines, opcionesDePaginacion);
-        console.log("Resultados filtrados y paginados:", resultados);
-
-        //let products = await productsModel.paginate({},{pageQuery, limit, lean:true}) 
+        
+        const products = obtenerResultadosFiltradosYPaginados(pipelines, opcionesDePaginacion)
+        //const products = await productsModel.aggregate(pipelines);
+        console.log("🚀 ~ productsRouterView.get ~ products:", products)
 
         products.isValid = pageQuery >= 1 && pageQuery <= products.totalPages
 
