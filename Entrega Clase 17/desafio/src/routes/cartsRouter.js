@@ -75,6 +75,46 @@ cartsRouter.post('/:cid/product/:pid', async (req, res) => {   ///api/carts/1/pr
     }
 })
 
+cartsRouter.delete('/:cid/product/:pid', async (req, res) => {   ///api/carts/1/product/2
+    const cartId = parseInt(req.params.cid)
+    console.log("🚀 ~ cartsRouter.delete ~ cartId:", cartId)
+    const productId = parseInt(req.params.pid)
+    console.log("🚀 ~ cartsRouter.delete ~ productId:", productId)
+    
+    if (!cartId) {
+        return res.status(404).json({ message: 'Cart not found' })
+    }
+
+    try {
+        const cart = await cartsModel.findOne({id: cartId })
+        console.log("🚀 ~ cartsRouter.delete ~ cart:", cart)
+
+        if(!cart) {
+            return res.status(404).json({ message: 'Cart not found' })
+        }
+        
+        const productIndex = cart.products.findIndex(item => item.product === productId);
+        console.log("🚀 ~ cartsRouter.delete ~ productIndex:", productIndex)
+        if (productIndex === -1) {
+            return res.status(404).json({ message: 'Product not found in cart' });
+        }
+    
+            // Elimino el producto del array de productos
+            cart.products.splice(productIndex, 1);
+
+            // Guardo los cambios en la base de datos
+            await cart.save();
+
+            res.status(200).json({ message: `Product ${productId} deleted from cart` });
+ 
+
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ error: 'Error processing request' });
+    }
+})
+
 cartsRouter.delete('/delete', async (req, res) => {
 
     const result = await cartsModel.deleteMany({});

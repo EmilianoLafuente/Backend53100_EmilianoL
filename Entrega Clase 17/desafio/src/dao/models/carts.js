@@ -10,10 +10,6 @@ const schema = new Schema({
 
     },
     products: [{
-        // type: Schema.Types.ObjectId,
-        // ref:"products", 
-        // required: true,
-
         type: [], 
         required: true,
         default: []
@@ -37,11 +33,6 @@ schema.pre('save', async function(next) { //para agregar id
         next(error);
     }
 });
-
-// schema.pre("find", function (){
-//     this.populate('products.id')
-// })
-
 
 const cartsModel = mongoose.model(collection, schema)
 

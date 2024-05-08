@@ -38,8 +38,6 @@ const io = new Server(server) //instanciando socket.io
 io.on('connection', async (socket) => {
     console.log('Usuario conectado');
     let products = await productsModel.find() 
-    // let products = await productsModel.paginate({},{limit: 5}) 
-    // console.log("🚀 ~ io.on ~ products:", products)
 
     //Enviamos los productos por emit
     socket.emit('productosEmit', products);

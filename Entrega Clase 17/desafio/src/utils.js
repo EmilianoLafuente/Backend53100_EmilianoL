@@ -14,11 +14,10 @@ const __dirname = dirname(__filename);
 
       const resultadosPaginados = await productsModel.paginate(resultadosAgregados, opcionesDePaginacion);
       //console.log("🚀 ~ obtenerResultadosFiltradosYPaginados ~ resultadosPaginados:", resultadosPaginados)
-      //let products = await productsModel.paginate({resultadosAgregados},{pageQuery, limit, lean:true}) 
+
       return resultadosPaginados
-      //return resultadosPaginados;
-      //return products
-      
+
+      //return resultadosPaginados;      
     } catch (error) {
       console.error("Error al obtener resultados filtrados y paginados:", error);
       throw error;

@@ -1,42 +1,37 @@
 import { Router } from "express";
 import { __dirname } from "../utils.js";
 import { obtenerResultadosFiltradosYPaginados } from "../utils.js";
-import { join } from 'path';
-// import productManager from "../productManager.js"
 import productsModel from "../dao/models/prodcuts.js";
 
 const productsRouterView = Router()
 
-
-
-//Con Type: module (de debe hacer de esta manera)
-const path = join(__dirname, 'database', 'DbProducts.json') //access to DB
-
-// const productsManager = new productManager(path)
-// const products = await productsManager.getProducts()
-
 productsRouterView.get('/realTimeProducts', async (req, res) => {
     let pageQuery = parseInt(req.query.page)
-    let categoryQuery = req.query.category ? req.query.category : "PC" //quite .toString()
+    let categoryQuery = req.query.category ? req.query.category : "PC" 
     let limit = req.query.limit ? parseInt(req.query.limit, 10) : 5
-
+    let sortQuery = req.query.sort
+    
     if (!pageQuery) pageQuery = 1
 
-    const pipelines = [
-        {$match: { category: categoryQuery }},
-        {$sort: { price: -1}}
-    ]
-    const opcionesDePaginacion = { 
-        page: pageQuery,
+    const filtro = {
+        category: categoryQuery      
+    }
+
+    const opcionesDePaginacion =  { 
         limit: limit,
+        page: pageQuery,
+        sort: sortQuery,
         lean:true
     }
+
+    if (sortQuery) {
+        opcionesDePaginacion.sort = { price: sortQuery.toLowerCase() === 'asc' ? 1 : -1 };
+    }
+    
+    console.log("🚀 ~ productsRouterView.get ~ opcionesDePaginacion:", opcionesDePaginacion)
     
     try {
-        
-        const products = obtenerResultadosFiltradosYPaginados(pipelines, opcionesDePaginacion)
-        //const products = await productsModel.aggregate(pipelines);
-        console.log("🚀 ~ productsRouterView.get ~ products:", products)
+        const products = await productsModel.paginate(filtro,opcionesDePaginacion);
 
         products.isValid = pageQuery >= 1 && pageQuery <= products.totalPages
 
@@ -59,9 +54,7 @@ productsRouterView.get('/realTimeProducts', async (req, res) => {
 
 productsRouterView.get('/', async (req, res) => {
     // Renderiza la plantilla Handlebars con los datos de productos  
-    // let products = await productsModel.find()
     let products = await productsModel.paginate({}, { limit: 5 })
-    //console.log("🚀 ~ productsRouterView.get ~ products:", products)
 
     res.render('home', { products });
 })
