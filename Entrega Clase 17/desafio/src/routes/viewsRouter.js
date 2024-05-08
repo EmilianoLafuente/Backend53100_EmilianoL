@@ -8,13 +8,14 @@ const productsRouterView = Router()
 productsRouterView.get('/realTimeProducts', async (req, res) => {
     let pageQuery = parseInt(req.query.page)
     let categoryQuery = req.query.category ? req.query.category : "PC" 
+    console.log("🚀 ~ productsRouterView.get ~ categoryQuery:", categoryQuery)
     let limit = req.query.limit ? parseInt(req.query.limit, 10) : 5
     let sortQuery = req.query.sort
     
     if (!pageQuery) pageQuery = 1
 
-    const filtro = {
-        category: categoryQuery      
+    const pipeline = {
+        category: categoryQuery.toString()    
     }
 
     const opcionesDePaginacion =  { 
@@ -27,11 +28,10 @@ productsRouterView.get('/realTimeProducts', async (req, res) => {
     if (sortQuery) {
         opcionesDePaginacion.sort = { price: sortQuery.toLowerCase() === 'asc' ? 1 : -1 };
     }
-    
-    console.log("🚀 ~ productsRouterView.get ~ opcionesDePaginacion:", opcionesDePaginacion)
-    
+
     try {
-        const products = await productsModel.paginate(filtro,opcionesDePaginacion);
+        const products = await productsModel.paginate(pipeline,opcionesDePaginacion);
+        console.log("🚀 ~ productsRouterView.get ~ products:", products)
 
         products.isValid = pageQuery >= 1 && pageQuery <= products.totalPages
 
